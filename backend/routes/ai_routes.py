@@ -15,7 +15,7 @@ api_key = os.getenv("GOOGLE_API_KEY")
 if not api_key:
     raise Exception("GOOGLE_API_KEY missing")
 
-print("✅ API KEY LOADED:", bool(api_key))
+print("SUCCESS API KEY LOADED:", bool(api_key))
 
 genai.configure(api_key=api_key)
 
@@ -69,7 +69,7 @@ Rules:
         return {"content": text}
 
     except Exception as e:
-        print("❌ ERROR:", e)
+        print("ERROR:", e)
         print(traceback.format_exc())
 
         return {"content": f"Server error: {str(e)}"}
